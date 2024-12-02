@@ -11,7 +11,7 @@ public class Main extends JFrame{
 
     @Override
     public void paint(Graphics g){
-        g.drawRect(0, 0, 100, 100);
+        g.drawOval(0, 0, 100, 100);
     }
     public static void main(String[] args) {
         new Main();
