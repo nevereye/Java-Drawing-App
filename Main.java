@@ -2,22 +2,21 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Main extends JFrame{
+    private Listener mouse;
     public Main(){
         this.setTitle("mspaint2");
         this.setSize(1600, 900);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
-        JPanel panel = new JPanel();
-        add(panel);
 
+        mouse = new Listener();
+        this.addMouseListener(mouse);
         this.setVisible(true);
     }
 
     @Override
     public void paint(Graphics g){
-        for(int i = 0; i < 100; i++){
-            g.drawLine(0, 0, i, i);
-        }
+        System.out.println(mouse.isMouseClicked());
+        repaint();
     }
 
     public static void main(String[] args) {
