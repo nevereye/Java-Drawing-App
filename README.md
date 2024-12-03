@@ -1,3 +1,3 @@
 # Final-Project
 
-![image info](./picture/image.jpg)
+![image info](./Pictures/image.jpg)
