@@ -2,18 +2,18 @@ import java.awt.event.*;
 
 public class Listener implements MouseListener {
    
-    private boolean isMouseClicked = false;
+    private boolean isMousePressed = false;
 
     @Override
     public void mousePressed(MouseEvent e)
     {
-        this.isMouseClicked = true;
+        this.isMousePressed = true;
     }
 
     @Override
     public void mouseReleased(MouseEvent e)
     {
-        this.isMouseClicked = false;
+        this.isMousePressed = false;
     }
     
     @Override
@@ -34,7 +34,7 @@ public class Listener implements MouseListener {
 
     }
 
-    public boolean isMouseClicked(){
-        return this.isMouseClicked;
+    public boolean isMousePressed(){
+        return this.isMousePressed;
     }
 }

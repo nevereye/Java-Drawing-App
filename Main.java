@@ -16,7 +16,7 @@ public class Main extends JFrame{
 
     @Override
     public void paint(Graphics g){
-        System.out.println(mouse.isMouseClicked());
+        System.out.println(mouse.isMousePressed());
         repaint();
     }
 
