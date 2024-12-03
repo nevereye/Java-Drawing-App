@@ -21,8 +21,8 @@ public class DrawCanvasPanel extends JPanel {
     // constructor
     public DrawCanvasPanel()
     {
-        mouse = new Listener();
-        this.addMouseListener(new Listener());
+        mouse = new DrawListener();
+        this.addMouseListener(new DrawListener());
 
         // default colors for background and brush color:
         backgroundColor = Color.white;

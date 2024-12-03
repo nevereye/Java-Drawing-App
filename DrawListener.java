@@ -1,6 +1,6 @@
 import java.awt.event.*;
 
-public class Listener implements MouseListener {
+public class DrawListener implements MouseListener {
    
     private boolean isMousePressed = false;
 
