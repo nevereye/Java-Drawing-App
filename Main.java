@@ -1,12 +1,15 @@
-import javax.swing.JFrame;
-import java.awt.Graphics;
+import javax.swing.*;
+import java.awt.*;
 
 public class Main extends JFrame{
     public Main(){
-        setTitle("mspaint2");
-        setSize(1600, 900);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setVisible(true);
+        this.setTitle("mspaint2");
+        this.setSize(1600, 900);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setVisible(true);
+
+        JPanel panel = new JPanel();
+        add(panel);
     }
 
     @Override
