@@ -6,16 +6,20 @@ public class Main extends JFrame{
         this.setTitle("mspaint2");
         this.setSize(1600, 900);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setVisible(true);
-
+        
         JPanel panel = new JPanel();
         add(panel);
+
+        this.setVisible(true);
     }
 
     @Override
     public void paint(Graphics g){
-        g.drawOval(0, 0, 100, 100);
+        for(int i = 0; i < 100; i++){
+            g.drawLine(0, 0, i, i);
+        }
     }
+
     public static void main(String[] args) {
         new Main();
     }
