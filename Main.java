@@ -10,6 +10,7 @@ public class Main extends JFrame{
 
         mouse = new Listener();
         this.addMouseListener(mouse);
+
         this.setVisible(true);
     }
 
