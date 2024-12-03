@@ -1,3 +1,3 @@
 # Final-Project
 
-![image info](./Pictures/real.mov)
+![image info](./Pictures/image.jpg)
