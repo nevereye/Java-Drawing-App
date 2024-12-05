@@ -4,7 +4,7 @@ import javax.swing.*;
 public class Toolbar extends JPanel{
     public Toolbar(){
         this.setBackground(Color.ORANGE);
-        this.add(new JButton("test button"));
+        this.add(new JButton(":("), BorderLayout.CENTER);
     }
 
     @Override
