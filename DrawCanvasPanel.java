@@ -20,6 +20,7 @@ public class DrawCanvasPanel extends JPanel {
     {
 		pic = new BufferedImage(400, 400, BufferedImage.TYPE_INT_RGB);
 
+        
 
     }
 
@@ -34,7 +35,10 @@ public class DrawCanvasPanel extends JPanel {
         // cast g as Graphics2D object (Better, more methods)
         Graphics2D g2d = (Graphics2D)g;
 
-        g.drawOval(100, 100, 100, 100);
+
+        g2d.drawImage(pic, 0, 0,null );
+
+        //g.drawOval(100, 100, 100, 100);
         //repaint();
     }
 
