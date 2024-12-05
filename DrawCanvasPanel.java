@@ -32,9 +32,8 @@ public class DrawCanvasPanel extends JPanel {
         backgroundColor = Color.WHITE;
         brushColor = Color.BLACK;
 
-        
         bBrush = pic.createGraphics();
-        bBrush.fillRect(0,0,100,100);
+        bBrush.fillRect(0,0,200,200);
 
         // call dispose 
         bBrush.dispose();

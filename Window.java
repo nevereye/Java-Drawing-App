@@ -10,7 +10,6 @@ public class Window extends JFrame{
         this.setSize(width, height);
         this.setResizable(resizable);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setVisible(true);
 
         // add components here
         canvas = new DrawCanvasPanel();
@@ -18,5 +17,9 @@ public class Window extends JFrame{
 
         toolbar = new Toolbar();
         this.add(toolbar, BorderLayout.WEST);
+
+        // set Jframe visible AFTER adding all components, or it may not render.
+        this.setVisible(true);
+
     }
 }
