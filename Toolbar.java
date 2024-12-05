@@ -4,6 +4,7 @@ import javax.swing.*;
 public class Toolbar extends JPanel{
     public Toolbar(){
         this.setBackground(Color.red);
+        this.setSize(new Dimension(200, 200));
     }
 
     @Override
