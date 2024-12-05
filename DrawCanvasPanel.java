@@ -12,14 +12,17 @@ public class DrawCanvasPanel extends JPanel {
 
     // CHRIS IS WORKING HERE
 
-    
     // Chris:
     // We stores  the user's drawing edits into BufferedImage.
     // we draw on the BufferedImage picture, NOT directly onto JPanel.
     // we edit pixel date (draw) of the picture using bBrush Graphics2D.
     // Then we draw (render) the picture onto the JPanel in paintComponent method using the JPanel's own Graphics object.
     private BufferedImage picture;
-    private Graphics2D bBrush;
+    private Graphics2D bBrush; // DONT GIVE ACCESSOR METHOD!
+
+    // Upadate: Added int variable for brush's size. Will be put into "new BasicStroke( size )". 
+    // BasicStroke only affects draw methods in Graphics classes (outline and lines NOT fill methods).
+    private int brushSize;
 
     // color of Picture's background.
     Color backgroundColor;
@@ -30,12 +33,13 @@ public class DrawCanvasPanel extends JPanel {
     int picHeight;
     int picWidth;
 
-    // constructor
+    // constructor - creates image, sets Default values.
     public DrawCanvasPanel()
     {
         // Define Image Width and Height:
         picHeight = 400;
         picWidth = 400;
+        brushSize = 1;
 
         // Creates BufferedImage object. (our REAL drawing canvas).
         // Note: BufferedImage Object's pixels appear to be all colored black by defualt on creation.
@@ -71,12 +75,51 @@ public class DrawCanvasPanel extends JPanel {
 
         // draws Buffered Image Pic.
         g2d.drawImage(picture, 0, 0,null );
-
     }
 
-    // sets brush properties (Color and Stroke)
-    public void set( Graphics2D g2d)
+    // UPDATED:
+    // sets properties of brush (Graphics 2D) to current (Color and Stroke (size of brush) (maybe))
+    // passing by reference.
+    // NOTE: USE THIS IN DrawListener Class! (???)
+    public void updateBrush( Graphics2D g2d)
     {
-
+        g2d.setColor(brushColor); // sets to brush color.
+        g2d.setStroke( new BasicStroke(brushSize)); // sets size of brush. 
     }
+
+    // Setter and getter methods:
+
+    public Color getBrushColor()
+    {
+        Color copy = brushColor;
+        return copy;
+    }
+
+    // Note: Is Color Object immutable??? is this shallow copy???
+    public Color getBackgroundColor()
+    {
+        Color copy = backgroundColor;
+        return copy;
+    }
+
+    // set brush and background colors
+    public void setBrushColor(Color newColor)
+    {
+        brushColor = newColor;
+    }
+
+
+    // DRAWING METHODS
+    public void drawLine( double mouseX, double mouseY)
+    {
+        bBrush = picture.createGraphics();
+        updateBrush(bBrush); // give new graphics object brush properties.
+
+        // INSERT DRAWING CODE!!!
+
+        // dispose after drawing
+        bBrush.dispose();
+    }
+
+
 }

@@ -4,6 +4,10 @@ public class DrawListener implements MouseListener {
    
     private boolean isMousePressed = false;
 
+    // IDEA - Chris: pass reference of DrawCanvas Panel into here via constructor!
+    // call drawing commands of canvas!
+    private DrawCanvasPanel canvas;
+
     @Override
     public void mousePressed(MouseEvent e)
     {
