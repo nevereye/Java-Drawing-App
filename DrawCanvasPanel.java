@@ -9,7 +9,7 @@ public class DrawCanvasPanel extends JPanel {
     // constructor
     public DrawCanvasPanel()
     {
-        
+        this.setBackground(Color.black);    
     }
 
     @Override
