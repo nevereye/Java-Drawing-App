@@ -8,20 +8,37 @@ import java.awt.image.BufferedImage;
 // User draws
 public class DrawCanvasPanel extends JPanel {
 
+    // CHRIS IS WORKING HERE
+
     // Chris:
     // stores user's drawing
     // we draw on the picture
     // Then we draw the picture onto the JPanel in paintComponent method.
-    BufferedImage pic;
-    Graphics2D bBrush;
+    private BufferedImage pic;
+    private Graphics2D bBrush;
+
+    Color backgroundColor;
+    Color brushColor;
 
     // constructor
     public DrawCanvasPanel()
     {
 		pic = new BufferedImage(400, 400, BufferedImage.TYPE_INT_RGB);
 
+        // Background color of JPanel component, NOT the picture.
+        this.setBackground(Color.GRAY);
+
+        // Default Colors used to draw ONTO the picture.
+        backgroundColor = Color.WHITE;
+        brushColor = Color.BLACK;
+
         
-        this.setBackground(Color.black);    
+        bBrush = pic.createGraphics();
+        bBrush.fillRect(0,0,100,100);
+
+        // call dispose 
+        bBrush.dispose();
+
     }
 
     @Override
@@ -35,14 +52,14 @@ public class DrawCanvasPanel extends JPanel {
         // cast g as Graphics2D object (Better, more methods)
         Graphics2D g2d = (Graphics2D)g;
 
-
+        // draws Image
         g2d.drawImage(pic, 0, 0,null );
-
+        
         //g.drawOval(100, 100, 100, 100);
         //repaint();
     }
 
-    public void drawLine( Graphics2D g2d)
+    public void set( Graphics2D g2d)
     {
 
     }
