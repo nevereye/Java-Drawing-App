@@ -21,7 +21,7 @@ public class DrawCanvasPanel extends JPanel {
 		pic = new BufferedImage(400, 400, BufferedImage.TYPE_INT_RGB);
 
         
-
+        this.setBackground(Color.black);    
     }
 
     @Override
