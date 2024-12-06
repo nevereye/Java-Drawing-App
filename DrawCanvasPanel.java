@@ -119,6 +119,9 @@ public class DrawCanvasPanel extends JPanel {
 
         // dispose after drawing
         bBrush.dispose();
+
+        // recalls paintComponent method to display update
+        repaint();
     }
 
 
