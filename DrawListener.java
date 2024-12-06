@@ -4,6 +4,13 @@ public class DrawListener implements MouseListener {
    
     private boolean isMousePressed = false;
 
+    // Chris: These vars store mouse pointer's current and previous positions:
+    private double prevMouseX;
+    private double prevMouseY;
+    private double currMouseX;
+    private double currMouseY;
+
+
     // IDEA - Chris: pass reference of DrawCanvas Panel into here via constructor!
     // call drawing commands of canvas!
     private DrawCanvasPanel canvas;
