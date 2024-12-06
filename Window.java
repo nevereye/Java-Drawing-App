@@ -8,14 +8,23 @@ public class Window extends JFrame{
     private JPanel optionPanel;
     private JPanel colorPanel;
 
+    // mouseListener and mouseMotionListener class
+    private DrawListener drawControls;
+
     public Window(String title, int width, int height, boolean resizable){
         this.setTitle(title);
         this.setSize(width, height);
         this.setResizable(resizable);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        // create mouseListener object, controls for drawing with mouse cursor.
+        drawControls = new DrawListener();
+
         // add components here
         canvas = new DrawCanvasPanel();
+        // adding drawControls as Listener for Mouse Events. (MouseListener + MouseMotionListener)
+            canvas.addMouseListener(drawControls);
+            canvas.addMouseMotionListener(drawControls); 
         this.add(canvas, BorderLayout.CENTER);
 
         toolbar = new JPanel();

@@ -15,10 +15,10 @@ public class DrawCanvasPanel extends JPanel {
     // Chris:
     // We stores  the user's drawing edits into BufferedImage.
     // we draw on the BufferedImage picture, NOT directly onto JPanel.
-    // we edit pixel date (draw) of the picture using bBrush Graphics2D.
+    // we edit pixel date (draw) of the picture using picBrush Graphics2D.
     // Then we draw (render) the picture onto the JPanel in paintComponent method using the JPanel's own Graphics object.
     private BufferedImage picture;
-    private Graphics2D bBrush; // DONT GIVE ACCESSOR METHOD!
+    private Graphics2D picBrush; // DONT GIVE ACCESSOR METHOD!
 
     // Upadate: Added int variable for brush's size. Will be put into "new BasicStroke( size )". 
     // BasicStroke only affects draw methods in Graphics classes (outline and lines NOT fill methods).
@@ -26,7 +26,7 @@ public class DrawCanvasPanel extends JPanel {
 
     // color of Picture's background.
     Color backgroundColor;
-    // color bBrush is using to draw onto pic. It's the pen we use to draw on our canvas!
+    // color picBrush is using to draw onto pic. It's the pen we use to draw on our canvas!
     Color brushColor;
 
     // width and height of picture.
@@ -54,13 +54,13 @@ public class DrawCanvasPanel extends JPanel {
 
         // createGraphics() - Creates a Graphics2D, which can be used to draw into this BufferedImage.
         // This new Graphics2D "belongs" to pic only!
-        bBrush = picture.createGraphics();
+        picBrush = picture.createGraphics();
         // Colors In Background of image!!!
-        bBrush.fillRect(0,0,picWidth,picHeight);
+        picBrush.fillRect(0,0,picWidth,picHeight);
 
         // MUST: call dispose() after using Graphics2D object you got from createGrphics() method.
         // This is needed to free up system resources space. Don't use this inside PaintComponent method!
-        bBrush.dispose();
+        picBrush.dispose();
     } // END OF CONSTRUCTOR
 
     @Override
@@ -112,13 +112,13 @@ public class DrawCanvasPanel extends JPanel {
     // DRAWING METHODS
     public void drawLine( double mouseX, double mouseY)
     {
-        bBrush = picture.createGraphics();
-        updateBrush(bBrush); // give new graphics object brush properties.
+        picBrush = picture.createGraphics();
+        updateBrush(picBrush); // give new graphics object brush properties.
 
         // INSERT DRAWING CODE!!!
 
         // dispose after drawing
-        bBrush.dispose();
+        picBrush.dispose();
 
         // recalls paintComponent method to display update
         repaint();
