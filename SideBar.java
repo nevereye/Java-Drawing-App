@@ -5,7 +5,7 @@ public class SideBar extends JPanel{
     private ColorOptionPanel colorPanel;
     private OptionPanel optionPanel;
     public SideBar(){
-        this.setLayout(new GridLayout(2, 1, 5, 5));
+        this.setLayout(new GridLayout(2, 1, 10, 10));
         this.setBackground(Color.green);
 
         // set preferred size, height does nothing to change panel's size when added to borderLayout. But width widens it.
