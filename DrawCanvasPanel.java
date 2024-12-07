@@ -39,7 +39,7 @@ public class DrawCanvasPanel extends JPanel {
         // Define Image Width and Height:
         picHeight = 400;
         picWidth = 400;
-        brushSize = 1;
+        brushSize = 2;
 
         // Creates BufferedImage object. (our REAL drawing canvas).
         // Note: BufferedImage Object's pixels appear to be all colored black by defualt on creation.
@@ -116,12 +116,15 @@ public class DrawCanvasPanel extends JPanel {
 
 
     // DRAWING METHODS
-    public void drawLine( double mouseX, double mouseY)
+
+    // Draws line using BasicStroke and given color.
+    public void drawLine( double startX, double startY, double endX, double endY)
     {
         picBrush = picture.createGraphics();
         updateBrush(picBrush); // give new graphics object brush properties.
 
-        // INSERT DRAWING CODE!!!
+        // need to cast doubles as integers for this method.
+        picBrush.drawLine((int)startX, (int)startY, (int)endX, (int)endY);
 
         // dispose after drawing
         picBrush.dispose();

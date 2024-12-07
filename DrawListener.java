@@ -15,12 +15,13 @@ public class DrawListener implements MouseListener, MouseMotionListener {
 
     // IDEA - Chris: pass reference of DrawCanvas Panel into here via constructor!
     // call drawing commands of canvas!
-    private DrawCanvasPanel canvas;
+    final private DrawCanvasPanel canvas;
 
     // Chris: Constructor for this mouse Listener
-    public DrawListener()
+    public DrawListener( DrawCanvasPanel canvas)
     {
-
+        // passing by reference
+        this.canvas = canvas;
     }
 
     // mousePressed event will occur and execute first, before mouse Dragging event can happen.
@@ -69,13 +70,16 @@ public class DrawListener implements MouseListener, MouseMotionListener {
     // MouseMotion Listener events!
     @Override
     public void mouseDragged(MouseEvent e) {
-        // TODO Auto-generated method stub
+        // gather current cursor position.
         currMouseX = e.getX();
         currMouseY = e.getY();
     
         // Drawing command happens here
-        prevMouseX = e.getX();
-        prevMouseY = e.getY();
+        canvas.drawLine(prevMouseX, prevMouseY, currMouseX, currMouseY);
+
+        // store as prev point.
+        prevMouseX = currMouseX;
+        prevMouseY = currMouseY;
     }
 
     @Override
