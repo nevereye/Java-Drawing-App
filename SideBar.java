@@ -4,7 +4,13 @@ import java.awt.*;
 public class SideBar extends JPanel{
     private ColorOptionPanel colorPanel;
     private OptionPanel optionPanel;
-    public SideBar(){
+
+    private DrawCanvasPanel SideBarcanvas; // Chris: pass reference of canvas so buttons inside sidebar can modify it???
+
+    public SideBar(DrawCanvasPanel canvas){
+
+        this.SideBarcanvas = canvas; // pass reference to ColorOptionPanel Constructor and OptionPanel Constructor?
+
         this.setLayout(new GridLayout(2, 1, 5, 5));
         this.setBackground(Color.green);
 

@@ -129,6 +129,7 @@ public class DrawCanvasPanel extends JPanel {
 
     // DRAWING METHODS
 
+    // For Line drawing tool (???)
     // Draws line using BasicStroke and given color.
     public void drawLine( double startX, double startY, double endX, double endY)
     {
@@ -144,6 +145,8 @@ public class DrawCanvasPanel extends JPanel {
         // recalls paintComponent method to display update
         repaint();
     }
+
+    
 
 
 }

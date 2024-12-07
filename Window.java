@@ -28,7 +28,7 @@ public class Window extends JFrame{
         this.add(canvas, BorderLayout.CENTER);
         
         // add side bar
-        sidebar = new SideBar();
+        sidebar = new SideBar(canvas);
         this.add(sidebar, BorderLayout.WEST);
         
         // set Jframe visible AFTER adding all components, or it may not render.
