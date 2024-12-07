@@ -45,13 +45,19 @@ public class DrawCanvasPanel extends JPanel {
         // Note: BufferedImage Object's pixels appear to be all colored black by defualt on creation.
 		picture = new BufferedImage(picWidth, picHeight, BufferedImage.TYPE_INT_RGB);
 
+        // PANEL PROPERTIES
         // Background color of JPanel component, NOT the picture.
         this.setBackground(Color.GRAY);
+        // gives spacing around border.
+        this.setBorder(BorderFactory.createMatteBorder(10, 10, 10, 10,Color.DARK_GRAY));
+        
 
+        // BRUSH PROPERTIES
         // Default Colors used to draw ONTO the picture.
         backgroundColor = Color.WHITE;
         brushColor = Color.BLACK;
 
+        // DRAWING BLANK ONTO PICTURE.
         // createGraphics() - Creates a Graphics2D, which can be used to draw into this BufferedImage.
         // This new Graphics2D "belongs" to pic only!
         picBrush = picture.createGraphics();
