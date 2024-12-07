@@ -1,8 +1,11 @@
 
 // For Matthew
 
-import javax.swing.JPanel;
+import java.awt.*;
+import javax.swing.*;
 
 public class ColorOptionPanel extends JPanel {
-
+    public ColorOptionPanel(){
+        this.setBackground(Color.blue);
+    }
 }
