@@ -37,8 +37,8 @@ public class DrawCanvasPanel extends JPanel {
     public DrawCanvasPanel()
     {
         // Define Image Width and Height:
-        picHeight = 400;
-        picWidth = 400;
+        picHeight = 500;
+        picWidth = 500;
         brushSize = 2;
 
         // Creates BufferedImage object. (our REAL drawing canvas).
@@ -112,6 +112,18 @@ public class DrawCanvasPanel extends JPanel {
     public void setBrushColor(Color newColor)
     {
         brushColor = newColor;
+    }
+
+    // get brush size
+    public int getBrushSize()
+    {
+        return this.brushSize;
+    }
+
+    //set brush size
+    public void setBrushSize( int brushSize)
+    {
+        this.brushSize = brushSize;
     }
 
 
