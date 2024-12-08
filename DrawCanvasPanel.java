@@ -33,6 +33,9 @@ public class DrawCanvasPanel extends JPanel {
     int picHeight;
     int picWidth;
 
+    // set eraser mode - false by defualt.
+    boolean eraserMode = false;
+
     // constructor - creates image, sets Default values.
     public DrawCanvasPanel()
     {
@@ -69,6 +72,8 @@ public class DrawCanvasPanel extends JPanel {
         picBrush.dispose();
     } // END OF CONSTRUCTOR
 
+    // create new image method.
+
     @Override
     // Chris Update: For painting in java Swing we overide the paintComponent method
     // We also cast Graphics g as Graphics2D object.
@@ -89,7 +94,16 @@ public class DrawCanvasPanel extends JPanel {
     // NOTE: USE THIS IN DrawListener Class! (???)
     public void updateBrush( Graphics2D g2d)
     {
-        g2d.setColor(brushColor); // sets to brush color.
+        // if eraser mode is true, then set color to background color.
+        if(eraserMode == false)
+        {
+            g2d.setColor(brushColor); // sets to brush color.
+        }
+        else
+        {
+            g2d.setColor(backgroundColor);
+        }
+       
         g2d.setStroke( new BasicStroke(brushSize)); // sets size of brush. 
     }
 
@@ -126,6 +140,16 @@ public class DrawCanvasPanel extends JPanel {
         this.brushSize = brushSize;
     }
 
+    // setter, toggles eraser mode.
+    public void setEraserMode( boolean eraserMode)
+    {
+        this.eraserMode = eraserMode;
+    }
+    // get eraser mode
+    public boolean getEraserMode()
+    {
+        return eraserMode;
+    }
 
     // DRAWING METHODS
 
@@ -145,8 +169,5 @@ public class DrawCanvasPanel extends JPanel {
         // recalls paintComponent method to display update
         repaint();
     }
-
-    
-
 
 }
