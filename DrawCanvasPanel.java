@@ -151,6 +151,16 @@ public class DrawCanvasPanel extends JPanel {
         return eraserMode;
     }
 
+    // create, update, and return Graphics2D reference for BufferedImage pic.
+    // destroy/dispose afterwards.
+    public Graphics2D createNewPictureGraphics()
+    {
+        Graphics2D g2d = picture.createGraphics();
+
+        return g2d; // returns reference to this object.
+    }
+    
+
     // DRAWING METHODS
 
     // For Line drawing tool (???)
@@ -168,6 +178,17 @@ public class DrawCanvasPanel extends JPanel {
 
         // recalls paintComponent method to display update
         repaint();
+    }
+
+    // FOR CLEAR JBUTTON IN OPTIONSPANEL.
+    // "Erases" all drawings on buffered image, draws a rectangle that covers entire canvas that's the same color as the backGround Color:
+    public void clearCanvas()
+    {
+        picBrush = createNewPictureGraphics();
+        picBrush.setColor(backgroundColor);
+
+        picBrush.fillRect(0,0,picWidth,picHeight);
+        picBrush.dispose();
     }
 
 }
