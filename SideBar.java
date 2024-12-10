@@ -4,9 +4,14 @@ import java.awt.*;
 public class SideBar extends JPanel{
     private ColorOptionPanel colorPanel;
     private OptionPanel optionPanel;
+    private DrawCanvasPanel canvas;
 
     
-    public SideBar(){
+    public SideBar( DrawCanvasPanel canvas){
+
+        // pass and store the reference of a DrawCanvasPanel object.
+        this.canvas = canvas;
+
         this.setLayout(new GridLayout(2, 1, 10, 10));
         this.setBackground(Color.green);
 
@@ -21,8 +26,8 @@ public class SideBar extends JPanel{
         colorPanel = new ColorOptionPanel();
         this.add(colorPanel);
 
-        // add option panel
-        optionPanel = new OptionPanel();
+        // add option panel, pass reference into constructor.
+        optionPanel = new OptionPanel( canvas );
         this.add(optionPanel);
     }
 }

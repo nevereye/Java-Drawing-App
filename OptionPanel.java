@@ -4,9 +4,16 @@ import java.awt.*;
 public class OptionPanel extends JPanel{
     JPanel panel1;
     JPanel panel2;
-    JCheckBox eraser;
-    JButton clearButton;
-    public OptionPanel(){
+    JCheckBox eraser; // toggle "eraser mode" for DrawCanvasPanel on and off.
+    JButton clearButton; // clear drawing canvas into a fresh blank sheet.
+
+    DrawCanvasPanel canvas; // call methods on and operate on DrawCanvasPanel Object.
+
+    public OptionPanel(DrawCanvasPanel canvas){
+
+        // store reference to DrawCanvasPanel object.
+        this.canvas = canvas;
+        
         this.setLayout(new GridLayout(2, 1, 5, 5));
         this.setBackground(Color.red);
         

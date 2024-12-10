@@ -27,12 +27,12 @@ public class Window extends JFrame{
         // adding canvas to JFrame.
         this.add(canvas, BorderLayout.CENTER);
         
-        // add side bar
-        sidebar = new SideBar();
+        // constructor and add side bar
+        sidebar = new SideBar( canvas); // pass reference of canvas object into constructor.
         this.add(sidebar, BorderLayout.WEST);
         
         // set Jframe visible AFTER adding all components, or it may not render.
         this.setVisible(true);
-
+        
     }
 }
