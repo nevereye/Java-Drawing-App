@@ -188,7 +188,10 @@ public class DrawCanvasPanel extends JPanel {
         picBrush.setColor(backgroundColor);
 
         picBrush.fillRect(0,0,picWidth,picHeight);
+
         picBrush.dispose();
+
+        repaint(); // repaint canvas.
     }
 
 }
