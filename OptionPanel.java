@@ -45,10 +45,14 @@ public class OptionPanel extends JPanel{
             }
         });
         panel2.add(eraser); // add eraser
+
+        // Creates and adds a JSlider.
+        // JSlider changes the BrushSize stored in Canvas Object.
         slider = new JSlider(1, 20);
         slider.setBorder(BorderFactory.createLineBorder(Color.black, 5, false));
-        slider.setMinorTickSpacing(2);
-        slider.setMajorTickSpacing(5);        
+        slider.setMinorTickSpacing(1);
+        slider.setMajorTickSpacing(2);
+        slider.setPaintTicks(true);        
         slider.setPaintLabels(true);
         canvas.setBrushSize(slider.getValue());
         slider.addChangeListener(new ChangeListener() {
