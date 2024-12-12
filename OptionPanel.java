@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.swing.event.*;
 import java.awt.*;
 import java.awt.event.*;
 
@@ -7,6 +8,7 @@ public class OptionPanel extends JPanel{
     JPanel panel2;
     JCheckBox eraser; // toggle "eraser mode" for DrawCanvasPanel on and off.
     JButton clearButton; // clear drawing canvas into a fresh blank sheet.
+    JSlider slider;
     public OptionPanel(DrawCanvasPanel canvas){
         this.setLayout(new GridLayout(2, 1, 5, 5));
         this.setBackground(Color.red);
@@ -35,6 +37,16 @@ public class OptionPanel extends JPanel{
             }
         });
         panel1.add(eraser);
+        
+        slider = new JSlider();
+        canvas.setBrushSize(slider.getValue());
+        slider.addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e){
+                canvas.setBrushSize(slider.getValue());
+            }
+        });
+        panel1.add(slider);
 
 
         panel2 = new JPanel();
