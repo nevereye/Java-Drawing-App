@@ -23,7 +23,7 @@ public class SideBar extends JPanel{
         this.setBorder(BorderFactory.createMatteBorder(spacing, spacing, spacing, spacing, Color.ORANGE));
         
         // add color panel
-        colorPanel = new ColorOptionPanel();
+        colorPanel = new ColorOptionPanel( canvas );
         this.add(colorPanel);
 
         // add option panel, pass reference into constructor.
