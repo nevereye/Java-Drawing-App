@@ -13,14 +13,14 @@ public class SideBar extends JPanel{
         this.canvas = canvas;
 
         this.setLayout(new GridLayout(2, 1, 10, 10));
-        this.setBackground(Color.green);
+        this.setBackground(Color.black);
 
         // set preferred size, height does nothing to change panel's size when added to borderLayout. But width widens it.
         this.setPreferredSize(new Dimension(200,0));
 
         // Chris: this adds a "Border" around SideBar, basically adds empty space around component. Helps to visually seperate components.
         int spacing = 10;
-        this.setBorder(BorderFactory.createMatteBorder(spacing, spacing, spacing, spacing, Color.ORANGE));
+        this.setBorder(BorderFactory.createMatteBorder(spacing, spacing, spacing, spacing, Color.black));
         
         // add color panel
         colorPanel = new ColorOptionPanel( canvas );

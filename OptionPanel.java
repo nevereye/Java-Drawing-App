@@ -6,19 +6,23 @@ import java.awt.event.*;
 public class OptionPanel extends JPanel{
     JPanel panel1;
     JPanel panel2;
+    JLabel toolbarLabel;
     JCheckBox eraser; // toggle "eraser mode" for DrawCanvasPanel on and off.
     JButton clearButton; // clear drawing canvas into a fresh blank sheet.
     JSlider slider;
     public OptionPanel(DrawCanvasPanel canvas){
-        this.setLayout(new GridLayout(2, 1, 5, 5));
-        this.setBackground(Color.red);
+        this.setLayout(new GridLayout(2, 1, 0, 0));
+        this.setBackground(Color.white);
         
         // panel one adds jlabel for toolbar as well as th clear button in a grid layout
         panel1 = new JPanel();
-        panel1.setBackground(Color.green);
-        panel1.setLayout(new GridLayout(1, 2, 5, 5));
-        panel1.add(new JLabel("Tool Bar: ")); // add jlabel
+        panel1.setBackground(Color.white);
+        panel1.setLayout(new GridLayout(1, 2, 0, 0));
+        toolbarLabel = new JLabel("Tool Bar: ");
+        toolbarLabel.setBorder(BorderFactory.createLineBorder(Color.black, 5, false));
+        panel1.add(toolbarLabel); // add jlabel
         clearButton = new JButton("clear"); 
+        clearButton.setBorder(BorderFactory.createLineBorder(Color.black, 5, false));
         clearButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) { 
@@ -30,9 +34,10 @@ public class OptionPanel extends JPanel{
 
         // panel two adds eraser and slider in a grid layout
         panel2 = new JPanel();
-        panel2.setLayout(new GridLayout(2, 1, 5, 5));
-        panel2.setBackground(Color.green);
+        panel2.setLayout(new GridLayout(2, 1, 0, 0));
+        panel2.setBackground(Color.white);
         eraser = new JCheckBox("eraser");
+        eraser.setBorder(BorderFactory.createLineBorder(Color.black, 5, false));
         eraser.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e){
@@ -41,6 +46,7 @@ public class OptionPanel extends JPanel{
         });
         panel2.add(eraser); // add eraser
         slider = new JSlider(1, 20);
+        slider.setBorder(BorderFactory.createLineBorder(Color.black, 5, false));
         slider.setMinorTickSpacing(2);
         slider.setMajorTickSpacing(5);        
         slider.setPaintLabels(true);
