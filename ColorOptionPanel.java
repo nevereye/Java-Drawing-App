@@ -1,40 +1,31 @@
-
-// For Matthew
-
+// AWT & Swing Imports
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
 public class ColorOptionPanel extends JPanel  {
 
-    // instance variables:
-    private DrawCanvasPanel canvas; // store object reference in here.
+    // Instance Variables:
+    private DrawCanvasPanel canvas;                                     // Store object reference in here
+    private JRadioButton                                                // JRadioButtons
+        blackButton, redButton, blueButton,  greenButton, yellowButton, orangeButton, purpleButton, lGrayButton, dGrayButton;    
+    private JLabel titleLabel;                                          // JLabel
+    private ButtonGroup Group;                                          // Button Group
 
-    // RadioButtons:
-    private JRadioButton blackButton, redButton, blueButton, greenButton, yellowButton, orangeButton, purpleButton;
-
-    // JLabel:
-    private JLabel titleLabel;
-
-    // Button Group:
-    private ButtonGroup Group;
-
-    // Constructor
+    // Constructor:
     public ColorOptionPanel( DrawCanvasPanel canvas){
 
-        // pass reference:
-        this.canvas = canvas;
+        // Canvas Set-Up:
+        this.canvas = canvas;                                           // Pass reference 
+        this.setBackground(Color.WHITE);                                // Set panel background color
+        this.setLayout(new GridLayout(5,1,10,10));  // Layout
 
-        // set panel background color.
-        this.setBackground(Color.WHITE);
-
-        // Layout
-        this.setLayout(new GridLayout(5,1,10,10));
-
-        // JLabel:
+        // Section 1 - Title:
         titleLabel = new JLabel("Brush Colors:");
 
-        // create buttons:
+
+        // Section 2 - JRadioButtons (Color Picker):
+        // Create buttons
         blackButton = new JRadioButton("Black");
         redButton = new JRadioButton("Red");
         blueButton = new JRadioButton("Blue");
@@ -42,29 +33,11 @@ public class ColorOptionPanel extends JPanel  {
         yellowButton = new JRadioButton("Yellow");
         orangeButton = new JRadioButton("Orange");
         purpleButton = new JRadioButton("Purple");
+        lGrayButton = new JRadioButton("L. Gray");
+        dGrayButton = new JRadioButton("D. Gray");
 
-        // create group:
+        // Create group & add JRadioButtons to group
         Group = new ButtonGroup();
-
-        // button background colors.
-        blackButton.setBackground(Color.GRAY);
-        redButton.setBackground(Color.red);
-        blueButton.setBackground(Color.blue);
-        greenButton.setBackground(Color.green);
-        yellowButton.setBackground(Color.yellow);
-        orangeButton.setBackground(Color.orange);
-        purpleButton.setBackground(Color.magenta);
-
-        // button font colors.
-        blackButton.setForeground(Color.white);
-        redButton.setForeground(Color.white);
-        blueButton.setForeground(Color.white);
-        greenButton.setForeground(Color.white);
-        yellowButton.setForeground(Color.white);
-        orangeButton.setForeground(Color.white);
-        purpleButton.setForeground(Color.white);
-
-        // Adding buttons in group
         Group.add(blackButton);
         Group.add(redButton);
         Group.add(blueButton);
@@ -72,8 +45,33 @@ public class ColorOptionPanel extends JPanel  {
         Group.add(yellowButton);
         Group.add(orangeButton);
         Group.add(purpleButton);
+        Group.add(lGrayButton);
+        Group.add(dGrayButton);
 
-        // Action Listeners
+        // Background Colors for JRadioButtons
+        blackButton.setBackground(Color.black);
+        redButton.setBackground(Color.red);
+        blueButton.setBackground(Color.blue);
+        greenButton.setBackground(Color.green);
+        yellowButton.setBackground(Color.yellow);
+        orangeButton.setBackground(Color.orange);
+        purpleButton.setBackground(Color.magenta);
+        lGrayButton.setBackground(Color.lightGray);
+        dGrayButton.setBackground(Color.darkGray);
+
+        // Font Colors for JRadioButtons
+        blackButton.setForeground(Color.white);
+        redButton.setForeground(Color.white);
+        blueButton.setForeground(Color.white);
+        greenButton.setForeground(Color.white);
+        yellowButton.setForeground(Color.white);
+        orangeButton.setForeground(Color.white);
+        purpleButton.setForeground(Color.white);
+        lGrayButton.setForeground(Color.white);
+        dGrayButton.setForeground(Color.white);
+
+
+        // Section 3 - ActionListeners for Buttons:
         blackButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             	canvas.setBrushColor(Color.black);
@@ -116,17 +114,28 @@ public class ColorOptionPanel extends JPanel  {
             }
         }); 
 
-        // Adding components:
-        this.add(titleLabel);
+        lGrayButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	canvas.setBrushColor(Color.lightGray);
+            }
+        }); 
 
-        // adding button:
+        dGrayButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	canvas.setBrushColor(Color.darkGray);
+            }
+        }); 
+
+        // Section 4 - Adding components to JPanel:
+        this.add(titleLabel);
         this.add(blackButton);
         this.add(redButton);
-        this.add(blueButton);
-        this.add(greenButton);
-        this.add(yellowButton);
         this.add(orangeButton);
+        this.add(yellowButton);
+        this.add(greenButton);
+        this.add(blueButton);
         this.add(purpleButton);
-
+        this.add(lGrayButton);
+        this.add(dGrayButton);
     }
 }
