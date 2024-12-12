@@ -36,12 +36,18 @@ public class DrawCanvasPanel extends JPanel {
     // set eraser mode - false by defualt.
     boolean eraserMode = false;
 
-    // constructor - creates image, sets Default values.
     public DrawCanvasPanel()
     {
+        // defualt size
+        this(600,500);
+    }
+
+    // constructor - creates image, sets Default values.
+    public DrawCanvasPanel(int width, int height)
+    {
         // Define Image Width and Height:
-        picHeight = 500;
-        picWidth = 500;
+        picHeight = height;
+        picWidth = width;
         brushSize = 2;
 
         // Creates BufferedImage object. (our REAL drawing canvas).
