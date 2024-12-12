@@ -38,7 +38,7 @@ public class OptionPanel extends JPanel{
         });
         panel1.add(eraser);
         
-        slider = new JSlider();
+        slider = new JSlider(1, 20);
         canvas.setBrushSize(slider.getValue());
         slider.addChangeListener(new ChangeListener() {
             @Override
