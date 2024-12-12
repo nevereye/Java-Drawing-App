@@ -1,9 +1,22 @@
 import java.awt.event.*;
 
+/*
+*	CSCI 185 M01
+*	Fall 2024
+*
+*	M10: Final Programming Project
+*	Student Team Names: Christopher Rodriguez, Jack Lin, Matthew Pietrzak
+*	Professor Name: Wenjia Li
+*	Date: DEC. 12, 2024
+*	Version: 2.0
+*	
+*	Class Name: DrawListener
+*	Class’s Main Contributor: Christopher Rodriguez
+*/
+
+
 public class DrawListener implements MouseListener, MouseMotionListener {
    
-    private boolean isMousePressed = false;
-
     // Chris: These vars store mouse pointer's current and previous positions:
     // pos of mouse frame before
     private double prevMouseX;
@@ -28,7 +41,6 @@ public class DrawListener implements MouseListener, MouseMotionListener {
     @Override
     public void mousePressed(MouseEvent e)
     {
-        this.isMousePressed = true;
 
         prevMouseX = e.getX();
         prevMouseY = e.getY();
@@ -41,7 +53,7 @@ public class DrawListener implements MouseListener, MouseMotionListener {
     @Override
     public void mouseReleased(MouseEvent e)
     {
-        this.isMousePressed = false;
+
     }
     
     @Override
@@ -62,9 +74,7 @@ public class DrawListener implements MouseListener, MouseMotionListener {
 
     }
 
-    public boolean isMousePressed(){
-        return this.isMousePressed;
-    }
+    
 
 
     // MouseMotion Listener events!

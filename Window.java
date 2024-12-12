@@ -1,6 +1,21 @@
 import javax.swing.*;
 import java.awt.*;
 
+/*
+*	CSCI 185 M01
+*	Fall 2024
+*
+*	M10: Final Programming Project
+*	Student Team Names: Christopher Rodriguez, Jack Lin, Matthew Pietrzak
+*	Professor Name: Wenjia Li
+*	Date: DEC. 12, 2024
+*	Version: 2.0
+*	
+*	Class Name: Window
+*	Class’s Main Contributor: Jack Lin
+*/
+
+
 public class Window extends JFrame{
     private DrawCanvasPanel canvas;
     private SideBar sidebar;

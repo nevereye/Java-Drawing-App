@@ -1,6 +1,21 @@
 import javax.swing.*;
 import java.awt.*;
 
+/*
+*	CSCI 185 M01
+*	Fall 2024
+*
+*	M10: Final Programming Project
+*	Student Team Names: Christopher Rodriguez, Jack Lin, Matthew Pietrzak
+*	Professor Name: Wenjia Li
+*	Date: DEC. 12, 2024
+*	Version: 2.0
+*	
+*	Class Name: SideBar
+*	Class’s Main Contributor: Jack Lin
+*   Other Contributors: Christopher Rodriguez
+*/
+
 public class SideBar extends JPanel{
     private ColorOptionPanel colorPanel;
     private OptionPanel optionPanel;

@@ -3,6 +3,20 @@ import javax.swing.event.*;
 import java.awt.*;
 import java.awt.event.*;
 
+/*
+*	CSCI 185 M01
+*	Fall 2024
+*
+*	M10: Final Programming Project
+*	Student Team Names: Christopher Rodriguez, Jack Lin, Matthew Pietrzak
+*	Professor Name: Wenjia Li
+*	Date: DEC. 12, 2024
+*	Version: 2.0
+*	
+*	Class Name: OptionPanel
+*	Class’s Main Contributor: Jack Lin
+*/
+
 public class OptionPanel extends JPanel{
     JPanel panel1;
     JPanel panel2;
@@ -14,7 +28,7 @@ public class OptionPanel extends JPanel{
         this.setLayout(new GridLayout(2, 1, 0, 0));
         this.setBackground(Color.white);
         
-        // panel one adds jlabel for toolbar as well as th clear button in a grid layout
+        // panel one adds jlabel for toolbar as well as the clear button in a grid layout
         panel1 = new JPanel();
         panel1.setBackground(Color.white);
         panel1.setLayout(new GridLayout(1, 2, 0, 0));
@@ -49,12 +63,16 @@ public class OptionPanel extends JPanel{
         // Creates and adds a JSlider.
         // JSlider changes the BrushSize stored in Canvas Object.
         slider = new JSlider(1, 20);
+
         slider.setBorder(BorderFactory.createLineBorder(Color.black, 5, false));
+
         slider.setMinorTickSpacing(1);
         slider.setMajorTickSpacing(2);
         slider.setPaintTicks(true);        
         slider.setPaintLabels(true);
+
         canvas.setBrushSize(slider.getValue());
+
         slider.addChangeListener(new ChangeListener() {
             @Override
             public void stateChanged(ChangeEvent e){
@@ -62,6 +80,7 @@ public class OptionPanel extends JPanel{
             }
         });
         panel2.add(slider); // add slider
+
         this.add(panel2);
     }
 }

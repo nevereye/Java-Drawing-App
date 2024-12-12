@@ -2,12 +2,27 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
+/*
+*	CSCI 185 M01
+*	Fall 2024
+*
+*	M10: Final Programming Project
+*	Student Team Names: Christopher Rodriguez, Jack Lin, Matthew Pietrzak
+*	Professor Name: Wenjia Li
+*	Date: DEC. 12, 2024
+*	Version: 2.0
+*	
+*	Class Name: DrawCanvasPanel
+*	Class’s Main Contributor: Christopher Rodriguez
+*/
+
+
+
 // UPDATE (12/5/24) - Finished drawing blank canvas
 
 // Chris Note:
-// The User will draw on this JComponent.
+// The User will draw on the Buffered Image stored into this JComponent.
 // It will be stored in the main JFrame in the Main class.
-// User draws
 public class DrawCanvasPanel extends JPanel {
 
     // CHRIS IS WORKING HERE

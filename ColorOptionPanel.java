@@ -3,6 +3,21 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+/*
+*	CSCI 185 M01
+*	Fall 2024
+*
+*	M10: Final Programming Project
+*	Student Team Names: Christopher Rodriguez, Jack Lin, Matthew Pietrzak
+*	Professor Name: Wenjia Li
+*	Date: DEC. 12, 2024
+*	Version: 2.0
+*	
+*	Class Name: ColorOptionPanel
+*	Class’s Main Contributor: Matthew Pietrzak
+*/
+
+
 public class ColorOptionPanel extends JPanel  {
 
     // Instance Variables:
