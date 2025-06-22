@@ -1,3 +1,3 @@
-# Final-Project
+# Drawing App 
 
-![image info](./Pictures/image.jpg)
+This is a really simple project using java swing / graphic library in order to make a gui for a drawing app. 
